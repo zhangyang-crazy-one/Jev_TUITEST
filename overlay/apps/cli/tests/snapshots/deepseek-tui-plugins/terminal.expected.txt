@@ -1,0 +1,8 @@
+/plugins: live installation inventory; profile-wide scope
+toggle: real profile write; restart required; live row remains disabled; /reload offered
+g p: same live inventory after close/reopen
+HUD: titled plan and execution; active background job survives turn end
+HUD: job settled during overlay; closing shows no stale execution section
+reopen: settled job stays absent; composer restored
+inspect: real local non-bundle refused; spec retained; no package operation
+exit: 0; no package operation

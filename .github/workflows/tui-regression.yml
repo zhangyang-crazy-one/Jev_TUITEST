@@ -1,0 +1,51 @@
+name: TUI regression suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Branch or commit in zhangyang-crazy-one/deepseek-harness containing the TUI Plugins/HUD implementation
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  tui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the source under test
+        uses: actions/checkout@v4
+        with:
+          repository: zhangyang-crazy-one/deepseek-harness
+          ref: ${{ inputs.source_ref }}
+          path: deepseek-harness
+          persist-credentials: false
+
+      - name: Check out this suite
+        uses: actions/checkout@v4
+        with:
+          path: tui-tests
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: deepseek-harness/pnpm-lock.yaml
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+          run_install: false
+
+      - name: Install source dependencies
+        working-directory: deepseek-harness
+        run: pnpm install --frozen-lockfile
+
+      - name: Run TUI regression suite
+        working-directory: tui-tests
+        run: ./scripts/test.sh ../deepseek-harness

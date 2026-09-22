@@ -1,0 +1,6 @@
+inspect: real local bundle accepted; confirmation required; no package process yet
+install: real manager invokes controlled executable; progress survives close/reopen; pnpm itself not executed
+failed: exit 1 classified as no-matching-version; profile files restored; retry offered; no restart handoff
+cancelled: explicit c reaches package process; real manager waits for exit and restores profile files
+reopen: settled cancellation retained; no running install or restart handoff
+exit: 0; both controlled package processes exited

@@ -1,0 +1,3 @@
+Session replay: the terminal profile records the todo plan.
+Plugins: `/plugins` opens the live inventory.
+Close: the composer and current Todo HUD return.

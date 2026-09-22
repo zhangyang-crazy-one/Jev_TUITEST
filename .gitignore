@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.credentials.yaml
+node_modules/
+.pnpm-store/
+coverage/
+test-results/
+playwright-report/
+*.pem
+*.key

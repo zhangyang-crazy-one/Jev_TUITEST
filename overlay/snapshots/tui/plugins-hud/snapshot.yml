@@ -1,0 +1,11 @@
+version: 1
+scenario: plugins-hud
+profile: deepseek-tui
+composition: deepseek-tui-default
+recording: authored
+permission: danger-full-access
+environment:
+  DSH_MODEL: deepseek-v4-flash
+header:
+  class: deepseek-tui-default
+  pin: true
