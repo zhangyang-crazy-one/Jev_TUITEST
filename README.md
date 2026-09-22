@@ -1,6 +1,6 @@
-# DeepSeek Harness TUI regression suite
+# Jev_TUITEST
 
-独立的 TUI Plugins、HUD 和 PTY 回归测试包。测试代码依赖 deepseek-harness 的源码、工作区依赖和测试配置；它不是单独发布的 npm 包。
+DeepSeek Harness 的独立 TUI Plugins、HUD 和 PTY 回归测试包。测试代码依赖 deepseek-harness 的源码、工作区依赖和测试配置；它不是单独发布的 npm 包。
 
 ## 本地运行
 
